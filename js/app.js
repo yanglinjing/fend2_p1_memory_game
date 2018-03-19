@@ -42,10 +42,10 @@ let moves = 0;
 let card2;
 let matching = 0; //防止在setTimeout运行过程中，用户再点击新的card
 let matchedPairs = 0; //8对即成功
+let starNum = 5;
 
 //事件代理event delegation：监视父元素ul，管理子元素li的事件
 document.querySelector('.deck').addEventListener('click', respondClick);//父元素ul
-youWin();
 
 function respondClick(evt){
   if(matching===0){
@@ -101,6 +101,11 @@ function compare(card){
     }
     open = [];
     count();
+    myStar();
+
+    if(matchedPairs===8) {
+        congrt();
+    }
 }
 
 //增加移动计数器并将其显示在页面上
@@ -109,13 +114,30 @@ function count(){
     document.querySelector('.moves').textContent = moves;
 }
 
-
-function youWin(){
-    if(matchedPairs===8){
-        congratulations();
+function myStar(){
+    const stars = document.querySelector('.stars')
+    const star = document.querySelector('li')
+    if(moves===12 || moves===16 || moves===18 || moves===20){
+        stars.removeChild(star);
+        starNum -=1;
     }
 }
 
-function congratulations(){
-
+function congrt(){
+    document.getElementById('congratulations').setAttribute('class', 'showWindow');
+    document.querySelector('#congratulations .moves').textContent = moves;
+    document.querySelector('#congratulations .stars').textContent = starNum;
 }
+
+
+//几个buttons的功能
+document.getElementById('play').addEventListener('click', reload);
+document.querySelector('.fa-repeat').addEventListener('click', reload);
+
+function reload(){
+    window.location.reload();
+}
+
+document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('congratulations').setAttribute('class', 'hideWindow');
+});

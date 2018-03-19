@@ -19,6 +19,9 @@
 
 <!--score panel-->
         <section class="score-panel">
+
+          <span class="moves">0</span> Moves
+
         	<ul class="stars">
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
@@ -26,8 +29,6 @@
             <li><i class="fa fa-star"></i></li>
             <li><i class="fa fa-star"></i></li>
         	</ul>
-
-        	<span class="moves">0</span> Moves
 
           <div class="restart">
         		<i class="fa fa-repeat"></i>
@@ -87,14 +88,23 @@
             </li>
         </ul>
 
+    <!--congratulations-->
+        <div id="congratulations" class="hideWindow">
+
+          <div>
+            <p>Congratulations! You won!</p>
+            <p>With <span class="moves">0</span> Moves and <span class="stars">1</span> Stars</p>
+            <p>Fantastic Job!</p>
+          </div>
+
+          <div>
+            <input id="play" type="button" value="Play Again" />
+            <input id="close" type="button" value="Close" />
+          </div>
+
+        </div>
 
     </div>
-
-<!--congratulations-->
-    <div id="congratulations">
-
-    </div>
-
 
     <script src="js/app.js"></script>
 </body>
