@@ -103,7 +103,7 @@ function compare(card){
     count();
     myStar();
 
-    if(matchedPairs===8) {
+    if(matchedPairs===1) {
         congrt();
     }
 }

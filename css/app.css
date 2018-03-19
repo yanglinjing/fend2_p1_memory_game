@@ -159,6 +159,7 @@ h1 {
 congratulations div
  */
 
+/* 遮罩层: z-index数字大的在上面，position: absolute；两个层必须是平级（同一个div的娃） */
 #congratulations {
   border: 1px solid #aa7ecd;
   border-radius: 10px;
@@ -166,9 +167,11 @@ congratulations div
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
   width: 400px;
   height: 300px;
-  padding: 32px;
+  padding: 40px;
   margin:0 auto;
   align-items: center;
+  text-align: center;
+  opacity:0.8;
   z-index:2;
   position: absolute;
 }
@@ -179,4 +182,25 @@ congratulations div
 
 .hideWindow {
   display: none;
+}
+
+.purpleButton {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#play, #close {
+  box-sizing: border-box;
+  text-align:center;
+  height:40px;
+  width: 100px;
+  border-radius:4px;
+  border:1px solid #aa7ecd;
+  color:#8d15ee;
+  display:block;
+  outline:0;
+  padding:0 1em;
+  cursor: pointer;
 }
