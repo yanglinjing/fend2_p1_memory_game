@@ -94,7 +94,7 @@ function compare(card){
             card.setAttribute('class', 'card');//为li设置class
             card2.setAttribute('class', 'card');
             matching = 0;
-        }, 1000);
+        }, 2000);
     }
     open = [];
     count();

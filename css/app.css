@@ -98,11 +98,7 @@ h1 {
  */
 
 .shake {
-	-webkit-animation-name: shaking;
-	-webkit-animation-duration: 0.8s;
-	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
+	-webkit-animation: shaking 1s;
 }
 
 
@@ -111,7 +107,8 @@ h1 {
 	20% { -webkit-transform:  rotate(-10deg); }
 	40% { -webkit-transform:  rotate(10deg); }
 	60% { -webkit-transform:  rotate(-10deg); }
-	80% { -webkit-transform:  rotate(0deg); }
+	80% { -webkit-transform:  rotate(10deg); }
+  100% { -webkit-transform:  rotate(0deg); }
 }
 
 /*
@@ -119,7 +116,7 @@ h1 {
  */
 
 .jump {
-  animation: jumping 1s ease;
+  -webkit-animation: jumping 1s ease;
 }
 
 @keyframes jumping {
