@@ -210,4 +210,5 @@ congratulations div
     width: 6px;
     height: 6px;
     position: absolute;
-}  
+    z-index:3;
+}
