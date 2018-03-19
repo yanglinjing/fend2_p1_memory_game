@@ -38,17 +38,19 @@ function shuffle(array) {
  */
 
 let open = [];
-let counter = 0;
+let moves = 0;
 let card2;
 let matching = 0; //防止在setTimeout运行过程中，用户再点击新的card
+let matchedPairs = 0; //8对即成功
 
 //事件代理event delegation：监视父元素ul，管理子元素li的事件
 document.querySelector('.deck').addEventListener('click', respondClick);//父元素ul
+youWin();
 
 function respondClick(evt){
   if(matching===0){
     let card = evt.target;//子元素li;
-    if (card.nodeName === 'LI' && !card.classList.contains('match')){//nodeName要大写
+    if (card.nodeName === 'LI' && !card.classList.contains('match') && !card.classList.contains('open')){//nodeName要大写
         card.setAttribute('class', 'card open');//为li设置class
         let symbol = card.firstElementChild.className;//获取i的字符，即class
         setTimeout(addToOpen(symbol), 600);
@@ -75,6 +77,7 @@ function openLength(card){
 //如果数组中已有另一张卡，则检查两张卡片是否匹配
 function compare(card){
     if(open[0]===open[1]){//匹配
+        matchedPairs+=1;
         card.setAttribute('class', 'card match');//为li设置class
         card2.setAttribute('class', 'card match');
         setTimeout(function(){
@@ -102,6 +105,17 @@ function compare(card){
 
 //增加移动计数器并将其显示在页面上
 function count(){
-    counter+=1;
-    document.querySelector('.moves').textContent = counter;
+    moves+=1;
+    document.querySelector('.moves').textContent = moves;
+}
+
+
+function youWin(){
+    if(matchedPairs===8){
+        congratulations();
+    }
+}
+
+function congratulations(){
+
 }
