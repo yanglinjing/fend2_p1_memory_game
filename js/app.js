@@ -51,7 +51,7 @@ function respondClick(evt){
     if (card.nodeName === 'LI' && !card.classList.contains('match')){//nodeName要大写
         card.setAttribute('class', 'card open');//为li设置class
         let symbol = card.firstElementChild.className;//获取i的字符，即class
-        addToOpen(symbol);
+        setTimeout(addToOpen(symbol), 600);
         openLength(card);
     }
   }
@@ -77,16 +77,24 @@ function compare(card){
     if(open[0]===open[1]){//匹配
         card.setAttribute('class', 'card match');//为li设置class
         card2.setAttribute('class', 'card match');
+        setTimeout(function(){
+          card.setAttribute('class', 'card match jump');//为li设置class
+          card2.setAttribute('class', 'card match jump');
+        }, 600)
     }
     if(open[0]!=open[1]){//不匹配
         matching = 1;
-        card.setAttribute('class', 'card wrong shake');//为li设置class
-        card2.setAttribute('class', 'card wrong shake');
+        card.setAttribute('class', 'card wrong');//为li设置class
+        card2.setAttribute('class', 'card wrong');
         setTimeout(function(){
-            card.setAttribute('class', 'card jump');//为li设置class
-            card2.setAttribute('class', 'card jump');
+            card.setAttribute('class', 'card wrong shake');//为li设置class
+            card2.setAttribute('class', 'card wrong shake');
+        }, 600)
+        setTimeout(function(){
+            card.setAttribute('class', 'card');//为li设置class
+            card2.setAttribute('class', 'card');
             matching = 0;
-        }, 800);
+        }, 1000);
     }
     open = [];
     count();
