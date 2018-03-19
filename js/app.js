@@ -80,11 +80,11 @@ function compare(card){
     }
     if(open[0]!=open[1]){//不匹配
         matching = 1;
-        card.setAttribute('class', 'card wrong');//为li设置class
-        card2.setAttribute('class', 'card wrong');
+        card.setAttribute('class', 'card wrong shake');//为li设置class
+        card2.setAttribute('class', 'card wrong shake');
         setTimeout(function(){
-            card.setAttribute('class', 'card');//为li设置class
-            card2.setAttribute('class', 'card');
+            card.setAttribute('class', 'card jump');//为li设置class
+            card2.setAttribute('class', 'card jump');
             matching = 0;
         }, 800);
     }
