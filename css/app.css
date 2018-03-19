@@ -204,3 +204,10 @@ congratulations div
   padding:0 1em;
   cursor: pointer;
 }
+
+
+.firworks{
+    width: 6px;
+    height: 6px;
+    position: absolute;
+}  
