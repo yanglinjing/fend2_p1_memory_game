@@ -10,6 +10,7 @@
     <!--jQuery-->
 </head>
 <body>
+<!--防止浏览器的拖拽功能：Disable Drag and Drop on HTML elements-->
 
     <div class="container">
 
@@ -28,14 +29,14 @@
 
         	<span class="moves">0</span> Moves
 
-            <div class="restart">
+          <div class="restart">
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
 
 <!--game cards-->
 <!--Font Awesome Web Application icons: e.g. "fa fa-diamond"-->
-        <ul class="deck">
+        <ul class="deck" ondragstart="return false" draggable="false">
             <li class="card">
                 <i></i>
             </li>

@@ -1,5 +1,5 @@
  /* 把所有图片上的符号，放入一个数组，并进行洗牌  */
-const symbols = ['fa-anchor', 'fa-bicycle', 'fa-bolt', 'fa-bomb', 'fa-cube', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', 'fa-anchor', 'fa-bicycle', 'fa-bolt', 'fa-bomb', 'fa-cube', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o']
+const symbols = ['fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', 'fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', ]
 
 shuffle(symbols);//洗牌
 
@@ -49,7 +49,7 @@ function respondClick(evt){
   if(matching===0){
     let card = evt.target;//子元素li;
     if (card.nodeName === 'LI' && !card.classList.contains('match')){//nodeName要大写
-        card.setAttribute('class', 'card open show');//为li设置class
+        card.setAttribute('class', 'card open');//为li设置class
         let symbol = card.firstElementChild.className;//获取i的字符，即class
         addToOpen(symbol);
         openLength(card);
