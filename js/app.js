@@ -33,18 +33,20 @@ function shuffle(array) {
  *    + 如果卡片匹配，将卡片锁定为 "open" 状态（将这个功能放在你从这个函数中调用的另一个函数中）
  *    + 如果卡片不匹配，请将卡片从数组中移除并隐藏卡片的符号（将这个功能放在你从这个函数中调用的另一个函数中）
  *    + 增加移动计数器并将其显示在页面上（将这个功能放在你从这个函数中调用的另一个函数中）
- *    
+ *
  *    + 如果所有卡都匹配，则显示带有最终分数的消息（将这个功能放在你从这个函数中调用的另一个函数中）
  */
 
 let open = [];
 let counter = 0;
 let card2;
+let matching = 0; //防止在setTimeout运行过程中，用户再点击新的card
 
 //事件代理event delegation：监视父元素ul，管理子元素li的事件
 document.querySelector('.deck').addEventListener('click', respondClick);//父元素ul
 
 function respondClick(evt){
+  if(matching===0){
     let card = evt.target;//子元素li;
     if (card.nodeName === 'LI' && !card.classList.contains('match')){//nodeName要大写
         card.setAttribute('class', 'card open show');//为li设置class
@@ -52,6 +54,7 @@ function respondClick(evt){
         addToOpen(symbol);
         openLength(card);
     }
+  }
 }
 
 //将卡片添加到 “open”  *数组* 中
@@ -76,12 +79,14 @@ function compare(card){
         card2.setAttribute('class', 'card match');
     }
     if(open[0]!=open[1]){//不匹配
+        matching = 1;
         card.setAttribute('class', 'card wrong');//为li设置class
         card2.setAttribute('class', 'card wrong');
         setTimeout(function(){
             card.setAttribute('class', 'card');//为li设置class
             card2.setAttribute('class', 'card');
-        }, 1000);
+            matching = 0;
+        }, 800);
     }
     open = [];
     count();
