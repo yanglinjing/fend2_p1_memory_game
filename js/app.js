@@ -43,6 +43,10 @@ let card2;
 let matching = false; //防止在setTimeout运行过程中，用户再点击新的card
 let matchedPairs = 0; //8对即成功
 let starNum = 5;
+let int, time;
+
+myTime();//计时
+
 
 //事件代理event delegation：监视父元素ul，管理子元素li的事件
 document.querySelector('.deck').addEventListener('click', respondClick);//父元素ul
@@ -105,8 +109,9 @@ function compare(card){
     count();
     myStar();
 
-    if(matchedPairs===1) {
-        congrt();
+    if(matchedPairs===8) {
+        clearInterval(int); //停止计时
+        congrt(); //弹出游戏完成对话框
     }
 }
 
@@ -129,6 +134,7 @@ function congrt(){
     document.getElementById('congratulations').setAttribute('class', 'showWindow');
     document.querySelector('#congratulations .moves').textContent = moves;
     document.querySelector('#congratulations .stars').textContent = starNum;
+    document.querySelector('#congratulations .time').textContent = time;
     runFirework();
 }
 
@@ -213,16 +219,19 @@ function locaion(x, y){
  *来自:https://zhidao.baidu.com/question/2077864432758305548.html
  */
 
-function two_char(n) {
-    return n >= 10 ? n : "0" + n;
-}
-function time_fun() {
-    var sec=0;
-    setInterval(function () {
+function myTime() {
+    let sec=0;
+    int = setInterval(timer, 1000);
+    function timer() {
         sec++;
-        var date = new Date(0, 0)
+        let date = new Date(0, 0)
         date.setSeconds(sec);
-        var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
-        document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
-    }, 1000);
+        let h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
+        time = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+        document.getElementById("mytime").innerText = time;
+    }
+}
+
+function two_char(n) { //补零
+    return n >= 10 ? n : "0" + n;
 }
