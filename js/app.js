@@ -1,5 +1,3 @@
-myTime();
-
  /* 把所有图片上的符号，放入一个数组，并进行洗牌  */
 const symbols = ['fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', 'fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', ]
 
@@ -208,25 +206,4 @@ function locaion(x, y){
     x=Math.round(Math.random()*(w));
     y=Math.round(Math.random()*(h));
     return x, y;
-}
-
-
-/*
- *计时器
- *来自:https://zhidao.baidu.com/question/2077864432758305548.html
- */
-document.querySelector('body').addEventListener('onload', myTime);
-function myTime() {
-   var sec=0;
-   setInterval(function () {
-       sec++;
-       var date = new Date(0, 0)
-       date.setSeconds(sec);
-       var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
-       document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
-   }, 1000);
-}
-//补零
-function two_char(n) {
-   return n >= 10 ? n : "0" + n;
 }
