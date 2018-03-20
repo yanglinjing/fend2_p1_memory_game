@@ -131,8 +131,11 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 600px;
     margin-bottom: 10px;
 }
 
@@ -152,6 +155,7 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+    color: #02b3e4;
 }
 
 
@@ -210,4 +214,4 @@ congratulations div
     width: 6px;
     height: 6px;
     position: absolute;
-}  
+}
