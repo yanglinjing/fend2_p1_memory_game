@@ -103,7 +103,7 @@ function compare(card){
     count();
     myStar();
 
-    if(matchedPairs===8) {
+    if(matchedPairs===1) {
         congrt();
     }
 }
@@ -167,11 +167,11 @@ function Fireworks(Div,x,y){
     document.body.appendChild(Div);
     Div.style.left=x+"px";                      //把鼠标点击坐标给div
     Div.style.top=y+"px";
-    let speedX = (parseInt(Math.random()*2) == 0 ? 1 : -1)*parseInt(Math.random()*16 + 1);  //三目运算符随机移动方向，概率50%,为1时往正方向移动，负1时往反方向移动第二个随机数随机速度快慢
-    let speedY = (parseInt(Math.random()*2) == 0 ? 1 : -1)*parseInt(Math.random()*20 + 1);
+    var speedX = (parseInt(Math.random()*2) == 0 ? 1 : -1)*parseInt(Math.random()*16 + 1);  //三目运算符随机移动方向，概率50%,为1时往正方向移动，负1时往反方向移动第二个随机数随机速度快慢
+    var speedY = (parseInt(Math.random()*2) == 0 ? 1 : -1)*parseInt(Math.random()*20 + 1);
     this.move=function(){
-        let i = 3;
-        let time1=setInterval(function(){
+        var i = 3;
+        var time1=setInterval(function(){
             i++;
             Div.style.left=Div.offsetLeft+speedX+"px";
             Div.style.top=Div.offsetTop+speedY+i+"px";   //当i+speedY>0时,烟花朝下运动。
@@ -185,7 +185,7 @@ function Fireworks(Div,x,y){
 
 function runFirework(){
     let x=300, y=300;
-    for(let i=0; i<80; i++){       //随机烟花的数量
+    for(let i=0;i<80;i++){       //随机烟花的数量
         const div=document.createElement("div");
         let b=new Fireworks(div, x, y);
         b.move();
