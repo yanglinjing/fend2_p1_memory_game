@@ -45,8 +45,7 @@ let matchedPairs = 0; //8对即成功
 let starNum = 5;
 let int, time;
 
-myTime();//计时
-
+myTime();//计时器
 
 //事件代理event delegation：监视父元素ul，管理子元素li的事件
 document.querySelector('.deck').addEventListener('click', respondClick);//父元素ul
