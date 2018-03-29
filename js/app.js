@@ -1,5 +1,5 @@
  /* 把所有图片上的符号，放入一个数组，并进行洗牌  */
-const symbols = ['fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', 'fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', ]
+const symbols = ['fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', 'fa-anchor', 'fa-paint-brush', 'fa-fax', 'fa-bomb', 'fa-paw', 'fa-diamond', 'fa-leaf', 'fa-paper-plane-o', ];
 
 shuffle(symbols);//洗牌
 
@@ -88,7 +88,7 @@ function compare(card){
           card.setAttribute('class', 'card match jump');//为li设置class
           card2.setAttribute('class', 'card match jump');
           matching = false;
-        }, 600)
+        }, 600);
     }
     if(open[0]!=open[1]){//不匹配
         matching = true;
@@ -97,7 +97,7 @@ function compare(card){
         setTimeout(function(){
             card.setAttribute('class', 'card wrong shake');//为li设置class
             card2.setAttribute('class', 'card wrong shake');
-        }, 600)
+        }, 600);
         setTimeout(function(){
             card.setAttribute('class', 'card');//为li设置class
             card2.setAttribute('class', 'card');
@@ -121,9 +121,10 @@ function count(){
 }
 
 function myStar(){
-    const stars = document.querySelector('.stars')
-    const star = document.querySelector('li')
-    if(moves===12 || moves===16 || moves===18 || moves===20){
+    const stars = document.querySelector('.stars');
+    const star = document.querySelector('li');
+    //五颗星  if(moves===12 || moves===16 || moves===18 || moves===20)
+    if(moves===16 || moves===20){
         stars.removeChild(star);
         starNum -=1;
     }
@@ -187,7 +188,7 @@ function Fireworks(Div,x,y){
                 clearInterval(time1);
             }
         },30);
-    }
+    };
 }
 
 function runFirework(){
@@ -204,7 +205,7 @@ function runFirework(){
 function locaion(x, y){
 
     //右下边求出图片起始点最大X和Y的坐标值
-    const w=window.screen.availWidth
+    const w=window.screen.availWidth;
     const h=window.screen.availHeight;
 
     //随机产生坐标x和坐标Y的值（都是从零到起始点最大X和Y的坐标值）
