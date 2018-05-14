@@ -1,18 +1,39 @@
-# 记忆游戏项目
+# Matching Game
 
-## 目录
+This is one of my assignments @Udacity. _JavaScript_ is used in this project.
 
-- [说明](#instructions)
-- [贡献](#contributing)
+## Table of Contents
 
-## 说明
+* [Instructions](#instructions)
+* [Contributing](#contributing)
 
-记忆游戏初始项目中有一些 HTML 和 CSS 文件的静态版本。 你需要将此项目从静态项目转换为交互式项目。 这需要修改 HTML 和 CSS 文件，但主要是对 JavaScript 文件的编写。
+## Instructions
 
-首先，请打开`js/app.js`并开始构建应用程序的功能。
+The **gameplay rules** are very simple:
 
-有关详细说明，请查看[优达学城教室](https://classroom.udacity.com/me)中的项目说明。
+flip over two hidden cards at a time to locate the ones that match!
 
-## 贡献
+![Image text](img/readme_correct_wrong.jpg)
 
-此仓库是 _所有_ 优达学城学生的入门代码。 因此，我们很可能不会接受 pull requests 请求。有关详细信息，请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+### How The Game Works
+Each turn:
+
+1. The player flips one card over to reveal its underlying symbol.
+2. The player then turns over a second card, trying to find the corresponding card with the same symbol.
+3. If the cards match, both cards stay flipped over.
+4. If the cards do not match, both cards are flipped face down.
+
+The game ends once all cards have been correctly matched.
+
+### Flip One card
+![Image text](img/readme_start.jpg)
+
+### A Correct Guess
+![Image text](img/readme_correct.jpg)
+
+### An Incorrect Guess
+![Image text](img/readme_wrong.jpg)
+
+## Contributing
+
+This repository is just one of my assignments @Udacity. Therefore, I most likely could not accept pull requests.
